@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { PlusIcon, Send } from "lucide-react";
+import { PlusIcon, Send, Sparkles } from "lucide-react";
 import React from "react";
 
 function ChatInterface() {
@@ -41,10 +41,10 @@ function ChatInterface() {
   };
 
   return (
-    <div className="flex bg-gray-100">
+    <div className="flex bg-gray-100 h-screen">
       {/* Sidebar */}
       <div className="w-64 bg-gray-900 text-white p-4">
-        <Button variant="outline" className="w-full mb-4">
+        <Button variant="secondary" className="w-full mb-4">
           <PlusIcon className="mr-2 h-4 w-4" />
           New chat
         </Button>
@@ -74,13 +74,9 @@ function ChatInterface() {
               }`}
             >
               {message.role === "assistant" && (
-                <Avatar className="mr-2">
-                  <AvatarImage
-                    src="/placeholder.svg?height=40&width=40"
-                    alt="AI"
-                  />
-                  <AvatarFallback>AI</AvatarFallback>
-                </Avatar>
+                <span className="mr-2 bg-white rounded-full p-3 border">
+                  <Sparkles className="h-4 w-4" />
+                </span>
               )}
               <div
                 className={`rounded-lg p-2 max-w-[80%] ${
@@ -94,7 +90,7 @@ function ChatInterface() {
               {message.role === "user" && (
                 <Avatar className="ml-2">
                   <AvatarImage
-                    src="/placeholder.svg?height=40&width=40"
+                    src="https://github.com/shadcn.png"
                     alt="User"
                   />
                   <AvatarFallback>U</AvatarFallback>

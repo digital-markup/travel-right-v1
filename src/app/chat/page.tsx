@@ -3,7 +3,7 @@ import ChatInterface from "../components/chat-interface";
 
 function ChatPage() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full min-h-full">
       <ChatInterface />
     </div>
   );
